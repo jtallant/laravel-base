@@ -23,6 +23,7 @@ Here is what it provides on top of a typical Laravel installation.
 ## Installation
 1. Clone this repo
 1. ```composer install``` from project root
+1. ```composer install --dev``` from project root
 1. Open up ```bootstrap/start.php``` and change ```exec('hostname')``` to your actual hostname. Try typing ```hostname``` into a terminal to find your hostname.
 1. Set the document root in httpd.conf to the public folder of the project (Apache)
 1. Delete the .git file and ```git init``` so you can create your own repo (optional)
