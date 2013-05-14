@@ -6,13 +6,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>TITLE HERE</title>
+        <title>{{ $title }}</title>
         <meta name="description" content="">
 
         {{-- Viewport meta, remove if site is not responsive --> --}}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         {{-- Place favicon.ico and apple-touch-icon.png in the root directory --}}
+        <link rel="icon" type="image/png" href="{{ Request::root() }}/img/favicon.png">
 
         {{-- Use less.js to get live refresh of .less files without compiling, only on localhost --}}
         @if ('local' == App::environment())
@@ -26,13 +27,24 @@
             {{-- Serve minified/combined css --}}
             {{ stylesheet() }}
         @endif
+
+        {{-- http://paulirish.com/2011/the-history-of-the-html5-shiv/ --}}
+        <!--[if lt IE 9]>
+        <script src="{{ Request::root() }}/components/js/html5shiv/src/html5shiv.js"></script>
+        <![endif]-->
     </head>
     <body>
-        @include('application.header')
+        @section('header')
+            @include('application.header')
+        @show
         <div id="content" class="container">
-            {{ $content }}
+            @section('content')
+                {{ $content }}
+            @show
         </div>
-        @include('application.footer')
+        @section('footer')
+            @include('application.footer')
+        @show
 
         <script src="{{ Request::root() }}/components/jquery/jquery.min.js"></script>
         <script src="{{ Request::root() }}/js/bootstrap/bootstrap.min.js"></script>
