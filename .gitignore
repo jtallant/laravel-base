@@ -2,3 +2,4 @@
 vendor/
 TODO.md
 NOTES.md
+app/database/local.sqlite

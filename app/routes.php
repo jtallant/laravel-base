@@ -12,4 +12,39 @@
 */
 
 # Root
-Route::get('/', 'PageController@home');
+Route::get('/', array('uses' => 'PagesController@home', 'as' => 'root'));
+
+# Auth
+Route::get('login', array('uses' => 'PagesController@login', 'as' => 'login'));
+Route::post('users/authenticate', 'UsersController@authenticate');
+Route::get('users/logout', array('uses' => 'UsersController@logout', 'as' => 'logout'));
+
+# Forgot Password
+Route::get(
+    'password/remind',
+    array(
+        'uses' => 'PagesController@forgotPassword',
+        'as' => 'forgot-password'
+    )
+);
+
+Route::post(
+    'password/remind',
+    array(
+        'uses' => 'PagesController@postForgotPassword',
+        'as' => 'send-password-reminder'
+    )
+);
+
+Route::get(
+    'password/reset/{token}',
+    array(
+        'uses' => 'PagesController@resetPassword',
+        'as' => 'reset-password'
+    )
+);
+
+Route::post(
+    'password/reset/{token}',
+    array('uses' => 'PagesController@postResetPassword')
+);
