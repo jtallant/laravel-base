@@ -26,6 +26,8 @@ Here is what it provides on top of a typical Laravel installation.
 1. ```composer install --dev``` from project root
 1. Open up ```bootstrap/start.php``` and change ```exec('hostname')``` to your actual hostname. Try typing ```hostname``` into a terminal to find your hostname.
 1. Delete the .git file and ```git init``` so you can create your own repo (optional)
+1. ```artisan migrate```
+1. ```artisan db:seed```
 1. ```artisan serve```
 
 ## Laravel4 Resources
