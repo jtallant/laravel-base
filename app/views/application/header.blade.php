@@ -7,7 +7,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="brand" href="#">Project Name</a>
+				<a class="brand" href="{{ URL::route('root') }}">Project Name</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<li><a href="#">Nav Link 1</a></li>
