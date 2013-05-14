@@ -25,17 +25,13 @@ Here is what it provides on top of a typical Laravel installation.
 1. ```composer install``` from project root
 1. ```composer install --dev``` from project root
 1. Open up ```bootstrap/start.php``` and change ```exec('hostname')``` to your actual hostname. Try typing ```hostname``` into a terminal to find your hostname.
-1. Set the document root in httpd.conf to the public folder of the project (Apache)
 1. Delete the .git file and ```git init``` so you can create your own repo (optional)
+1. ```artisan serve```
 
-Example of setting document root in Apache httpd.conf
+## Laravel4 Resources
+[Docs](http://four.laravel.com)  
+[Composer](http://getcomposer.org/doc/)  
+[Tutorials](http://net.tutsplus.com/tag/laravel/)
 
-```
-# Listen on port 90
-Listen 90
-# Document root for APPNAME
-<VirtualHost *:90>
-  DocumentRoot /Users/you/Sites/APPNAME/public
-</VirtualHost>
-```
-With the configuration above restarting apache would make the app available at http://localhost:90
+Want to manage PHP via git? [Check this out](https://github.com/josegonzalez/homebrew-php)
+
