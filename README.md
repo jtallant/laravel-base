@@ -22,6 +22,7 @@ Here is what it provides on top of a typical Laravel installation.
 
 ## Installation
 1. Clone this repo
+1. ```composer update``` from project root
 1. ```composer install``` from project root
 1. ```composer install --dev``` from project root
 1. Open up ```bootstrap/start.php``` and change ```exec('hostname')``` to your actual hostname. Try typing ```hostname``` into a terminal to find your hostname.
